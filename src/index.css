@@ -1,0 +1,14 @@
+/* global reset styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace; /* monospace font like in the refrence screenshot */
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  -webkit-font-smoothing: antialiased;
+}

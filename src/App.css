@@ -1,0 +1,37 @@
+/* main app styles - dark theme like the refrence */
+
+.App {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+.app-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px 25px;
+}
+
+/* the main title at top */
+.app-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  font-style: italic;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.loading-text {
+  color: #888;
+  font-size: 1rem;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* emoji count display */
+.emoji-count {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 15px 0 5px;
+}
