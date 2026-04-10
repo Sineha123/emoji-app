@@ -24,10 +24,12 @@ function App() {
       const response = await fetch('https://akhil-06.github.io/emoji_project/emojiList.js');
       const text = await response.text();
 
-      // the file has "const emojiList = [...]" format so we need to extract the json part
-      // removing the "const emojiList = " part and parsing the rest
-      const jsonStr = text.replace('const emojiList = ', '');
-      const data = JSON.parse(jsonStr);
+      // the file is a javascript file not json, so we cant use JSON.parse directly
+      // using Function constructor to safely evaluate the js and get the array
+      // basically it runs the script and returns the emojiList variable
+      const getEmojis = new Function(text + '\nreturn emojiList;');
+      const data = getEmojis();
+
       setEmojis(data);
       setFilteredEmojis(data);
       setLoading(false);
