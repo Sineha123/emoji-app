@@ -27,8 +27,12 @@ function App() {
       // the file is a javascript file not json, so we cant use JSON.parse directly
       // using Function constructor to safely evaluate the js and get the array
       // basically it runs the script and returns the emojiList variable
-      const getEmojis = new Function(text + '\nreturn emojiList;');
-      const data = getEmojis();
+const jsonStr = text
+  .replace(/^const emojiList = /, '')
+  .trim()
+  .replace(/;$/, '');
+
+const data = JSON.parse(jsonStr);
 
       setEmojis(data);
       setFilteredEmojis(data);
